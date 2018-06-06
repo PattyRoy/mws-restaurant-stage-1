@@ -144,6 +144,7 @@ createRestaurantHTML = (restaurant) => {
   var imageStr = image.src.slice(0, pos);
   var imageStr = imageStr.concat("_320.jpg");
   image.src = imageStr;
+  image.alt = "image of " + restaurant.name;
   li.append(image);
 
   const name = document.createElement('h1');

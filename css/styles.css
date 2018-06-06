@@ -75,7 +75,9 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
- /*    width: calc(50% - 80px); */
+    text-align: left;
+    height: auto;
+/*   width: calc(50% - 80px); */ 
 }
 
 /* Display list items side by side */
@@ -282,6 +284,16 @@ nav h1 a {
 }
 
 /* ====================== My Styles ====================== */
+.skip-link {
+	position: absolute;
+	top: -40px; 
+	left: 0;
+	background: #BF1722;
+	color: white;
+	padding: 8px;
+	z-index: 100;
+}
+
 #neighborhoods-select option {
   margin: 32px;
 }

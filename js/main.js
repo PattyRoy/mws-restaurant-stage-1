@@ -1,3 +1,4 @@
+
 let restaurants,
   neighborhoods,
   cuisines
@@ -138,14 +139,16 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
   const image = document.createElement('img');
-  image.className = 'restaurant-img';
+  image.className = 'restaurant-img lazy';
+    //image.className = 'restaurant-img';
+  image.setAttribute('data-src', DBHelper.imageUrlForRestaurant(restaurant)); 
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-    console.log(image.src);
   var pos = image.src.lastIndexOf(".");
   var imageStr = image.src.slice(0, pos);
   var imageStr = imageStr.concat("_320.jpg");
-  image.src = imageStr;
-    console.log(image.src);
+  image.setAttribute('data-src', imageStr);
+  //image.src = imageStr;
+  image.src = 'img\\1x1.gif';
   image.alt = "image of " + restaurant.name;
   li.append(image);
 

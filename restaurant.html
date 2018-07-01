@@ -6,30 +6,35 @@
   <meta name="theme-color" content="#252831"/>
   <!-- Normalize.css for better cross-browser consistency -->
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-  <!-- Main CSS file -->
+  <!-- Main CSS file   -->
   <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link rel="stylesheet" href="css/responsive.css" type="text/css" media="(min-width: 450px)">    
   <link rel="manifest" href="manifest.json" />
-  <script src="js/app.js"></script>
+  <script src="js/app.js" async></script>
+ 
   <title>Restaurant Info</title>
 </head>
 
 <body id="inside" class="inside">
   <!-- Beginning header -->
   <header>
+      
     <!-- Beginning nav -->
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
+
     <!-- Beginning breadcrumb -->
-    <nav id="breadcrumb" aria-label="Breadcrumb" 
-      <ul>
+    <nav id="breadcrumb" aria-label="Breadcrumb"> 
+      <ul id="breadcrumbUL">
         <li><a href="/">Home</a></li>
       </ul>
       </nav>
     <!-- End breadcrumb -->
     <!-- End nav -->
-  </header>
-  <!-- End header -->
+    </header>
+    <!-- End header -->
+  
 
   <!-- Beginning main -->
   <main id="maincontent">
@@ -61,13 +66,15 @@
   <footer id="footer">
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
+
   <!-- End footer -->
 
   <!-- Beginning scripts -->
   <!-- Database helpers -->
-  <script type="text/javascript" src="js/dbhelper.js"></script>
+  <script type="text/javascript" src="js/idb.js" async defer></script>
+  <script type="text/javascript" src="js/dbhelper.js" async defer></script>
   <!-- Main javascript file -->
-  <script type="text/javascript" src="js/restaurant_info.js"></script>
+  <script type="text/javascript" src="js/restaurant_info.js" async defer></script>
   <!-- Google Maps -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"></script>
 

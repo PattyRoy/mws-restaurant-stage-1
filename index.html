@@ -6,12 +6,25 @@
   <meta name="theme-color" content="#252831"/>
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css" type="text/css" media="(min-width: 450px)">  
   <link rel="manifest" href="manifest.json" />
   <script src="js/app.js"></script>
   <title>Restaurant Reviews</title>
+  <script>
+  function lazyLoad() {
+    setTimeout(function(){ 
+        var lazy = document.getElementsByClassName('lazy');
+
+        for(var i=0; i<lazy.length; i++){
+          lazy[i].src = lazy[i].getAttribute('data-src');
+        }
+        
+    }, 50);
+  }
+  </script>
 </head>
 
-<body>
+<body onload="lazyLoad()">
   <header>
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
@@ -40,7 +53,7 @@
   
     </section>
   </main>
-
+  <script type="text/javascript" src="js/idb.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"></script>

@@ -22,9 +22,11 @@
     }, 50);
   }
   </script>
+ 
 </head>
 
-<body onload="lazyLoad()">
+<!-- <body onload="lazyLoad()"> -->
+    <body>
   <header>
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
@@ -37,13 +39,11 @@
       <div id="map" role="application"></div>
     </section>
     <section>
-      <div id="filter" class="filter-options" role="menu">
+     <div id="filter" class="filter-options" role="menu">
         <h2>Filter Results</h2>
-        <label for="neighborhoods-select">Neighborhood</label>
         <select role="menuitem" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-label="neighborhood selector">
           <option value="all">All Neighborhoods</option>
         </select>
-        <label for="cuisines-select">Cuisine</label>
         <select role="menuitem" id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-label="cuisine selector">
           <option value="all">All Cuisines</option>
         </select>
@@ -57,6 +57,7 @@
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"></script>
+
 
 
   <footer id="footer">

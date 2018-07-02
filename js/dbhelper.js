@@ -54,7 +54,7 @@ const idbApp = (function() {
     });                    
   });
  }
- 
+ */
  function getRestaurants() {
    return dbPromise.then(db => {
       const tx = db.transaction('restaurants');
@@ -62,11 +62,12 @@ const idbApp = (function() {
       return store.getAll();
     });
  }
- */
+ 
   return {
     dbPromise: (dbPromise),
     addRestaurantById: (addRestaurantById),
     fetchRestaurantById: (fetchRestaurantById),
+    getRestaurants : (getRestaurants),  
   };
 })();
 
@@ -90,22 +91,22 @@ class DBHelper {
     const port = 1337; // Change this to your server port
     return `http://localhost:${port}/restaurants`;
   }
-  /*
+  
   static getRestaurantsIDB () {
   		return idbApp.getRestaurants();
   }
-*/
+
   /**
    * Fetch all restaurants.
    */
   static fetchRestaurants(callback) {
-      /*
+     
   DBHelper.getRestaurantsIDB().then(function(data) {
     if (data.length > 0) {
       return callback(null, data);
     }
   })
-  */
+  
   let fetchURL = DBHelper.DATABASE_URL;
   fetch(fetchURL)
   .then(function(response){

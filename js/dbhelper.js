@@ -109,7 +109,7 @@ class DBHelper {
   let fetchURL = DBHelper.DATABASE_URL;
   fetch(fetchURL)
   .then(function(response){
-  	  response.json().then(function(restaurantJSON) {
+  	  response.json().then(function(restaurantJSON) { 
          callback(null, restaurantJSON);
       });
   })
@@ -155,7 +155,7 @@ class DBHelper {
         const restaurant = restaurants.find(r => r.id == id);
         if (restaurant) { // Got the restaurant
           // add to IndexDB
-          let idbMessages = idbApp.addRestaurantById(restaurant);    
+          //let idbMessages = idbApp.addRestaurantById(restaurant);    
           callback(null, restaurant);
         } else { // Restaurant does not exist in the database
           callback('Restaurant does not exist', null);
@@ -267,6 +267,7 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
+    idbApp.addRestaurantById(restaurant); 
     return (`/img/${restaurant.photograph}.jpg`);
   }
 

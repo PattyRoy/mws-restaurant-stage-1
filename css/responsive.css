@@ -1,9 +1,3 @@
-@media screen and (max-width: 443px) {
-  #restaurants-list {
-    margin-top: 75px;
-  }
-}
-
 @media screen and (max-width: 599px) {
 
   #restaurants-list li {
@@ -49,3 +43,14 @@
 
   }  
 }
+
+@media screen and (max-width: 450px) {
+  #restaurants-list {
+    margin-top: 75px;
+  }
+    
+  #inside #map-container  {
+    width: 100%;
+  }
+}
+
